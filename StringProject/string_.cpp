@@ -1,4 +1,4 @@
-#include "string_.h"
+п»ї#include "string_.h"
 
 
 
@@ -15,13 +15,14 @@ string_::string_(int length)
 	str[length] = '\0';
 	this->length = length;
 }
-//конструктор, создающий строку на основе str
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ, СЃРѕР·РґР°СЋС‰РёР№ СЃС‚СЂРѕРєСѓ РЅР° РѕСЃРЅРѕРІРµ str
 string_::string_(const char * str)
 {
 	this->str = new char[strlen(str) + 1];
 	strcpy_s(this->str, strlen(str) + 1, str);
 	this->length = strlen(str);
 }
+
 
 string_::string_(const string_ & obj)
 {
