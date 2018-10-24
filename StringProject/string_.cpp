@@ -37,6 +37,25 @@ string_::string_(const string_ & obj)
 
 }
 
+string_ & string_::operator=(const string_ & obj)
+{
+	if (this == &obj) return *this;
+	if (obj.length == 0)
+	{
+		this->~string_();
+		return *this;
+	}
+	if (obj.length != this->length)
+	{
+		this->~string_();
+		this->str = new char[obj.length+1];
+		this->length = obj.length;
+	}
+	strcpy_s(this->str, obj.length + 1, obj.str);
+	return *this;
+
+}
+
 void string_::print()
 {
 	cout << this->str;

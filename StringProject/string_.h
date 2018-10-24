@@ -13,6 +13,7 @@ public:
 	string_(int length);
 	string_(const char*str);
 	string_(const string_&obj);
+	string_&operator=(const string_&obj);
 	void print();
 	//ввод строки с клавиатуры
 	void input();
